@@ -17,9 +17,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        // get references to ui widgets
-        ListView myListView = (ListView)findViewById(R.id.myListView);
-        
         // create the array list of to do items
         final ArrayList<String> todoItems = new ArrayList<String>();
         
