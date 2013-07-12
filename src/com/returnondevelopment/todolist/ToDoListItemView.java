@@ -47,7 +47,23 @@ public class ToDoListItemView extends TextView {
 	
 	@Override
 	public void onDraw(Canvas canvas) {
-		// use the base textview to render the text
+		// color as paper
+		canvas.drawColor(paperColor);
+		
+		// draw ruled lines
+		canvas.drawLine(0, 0, 0, getMeasuredHeight(), linePaint);
+		canvas.drawLine(0,  getMeasuredHeight(),  getMeasuredWidth(),  getMeasuredHeight(), linePaint);
+		
+		// draw margin
+		canvas.drawLine(margin, 0, margin, getMeasuredHeight(), marginPaint);
+		
+		// move the text across from the margin
+		canvas.save();
+		canvas.translate(margin, 0);
+		
+		// use the textview to render the text
 		super.onDraw(canvas);		
+		canvas.restore();
+		
 	}
 }
