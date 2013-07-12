@@ -15,5 +15,11 @@ public class NewItemFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		return inflater.inflate(R.layout.new_item_fragment,  container, false);
 	}
+	
+	public interface OnNewItemAddedListener {
+		public void onNewItemAdded(String newItem);		
+	}
+	
+	
 
 }
