@@ -31,19 +31,6 @@ public class MainActivity extends Activity {
         // bind the array adapter to the list view
         myListView.setAdapter(aa);
         
-        myEditText.setOnKeyListener(new View.OnKeyListener() {
-        	public boolean onKey(View v, int keyCode, KeyEvent event) {
-        		if (event.getAction() == KeyEvent.ACTION_DOWN)
-        			if ((keyCode == KeyEvent.KEYCODE_DPAD_CENTER)|| 
-        				(keyCode == KeyEvent.KEYCODE_ENTER)) {
-        				todoItems.add(0, myEditText.getText().toString());
-        				aa.notifyDataSetChanged();
-        				myEditText.setText("");
-        				return true;        				
-        			}
-        		return false;
-        	}
-        });
     }
 
 
