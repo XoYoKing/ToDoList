@@ -8,7 +8,8 @@ import android.app.FragmentManager;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
 
-public class ToDoList extends Activity {    
+public class ToDoList extends Activity
+	implements NewItemFragment.OnNewItemAddedListener {    
     private ArrayAdapter<String> aa;
     private ArrayList<String> todoItems;
     
@@ -31,12 +32,17 @@ public class ToDoList extends Activity {
         
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-    
+
+	@Override
+	public void onNewItemAdded(String newItem) {
+		todoItems.add(newItem);
+		aa.notifyDataSetChanged();
+	}
+
 }
