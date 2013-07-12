@@ -4,28 +4,30 @@ import java.util.ArrayList;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.KeyEvent;
+import android.app.FragmentManager;
 import android.view.Menu;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ListView;
 
-public class MainActivity extends Activity {
-    @Override
+public class MainActivity extends Activity {    
+    private ArrayAdapter<String> aa;
+    private ArrayList<String> todoItems;
+    
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        // get references to the fragments
+        FragmentManager fm = getFragmentManager();
+        ToDoListFragment todoListFragment = (ToDoListFragment)fm.findFragmentById(R.id.ToDoListFragment);
+                
         // create the array list of to do items
-        final ArrayList<String> todoItems = new ArrayList<String>();
+        todoItems = new ArrayList<String>();
         
         // create the Array Adapter to bind the array to the List View       
-        final ArrayAdapter<String> aa;
         aa = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, todoItems);
         
         // bind the array adapter to the list view
-        myListView.setAdapter(aa);
+        todoListFragment.setListAdapter(aa);
         
     }
 
