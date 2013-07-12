@@ -19,7 +19,6 @@ public class MainActivity extends Activity {
         
         // get references to ui widgets
         ListView myListView = (ListView)findViewById(R.id.myListView);
-        final EditText myEditText = (EditText)findViewById(R.id.myEditText);
         
         // create the array list of to do items
         final ArrayList<String> todoItems = new ArrayList<String>();
