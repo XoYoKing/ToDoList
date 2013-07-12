@@ -8,7 +8,7 @@ import android.app.FragmentManager;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
 
-public class MainActivity extends Activity {    
+public class ToDoList extends Activity {    
     private ArrayAdapter<String> aa;
     private ArrayList<String> todoItems;
     
