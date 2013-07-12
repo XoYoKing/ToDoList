@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 
 public class ToDoList extends Activity
 	implements NewItemFragment.OnNewItemAddedListener {    
-    private ArrayAdapter<ToDoItem> aa;
+    private ToDoItemAdapter aa;
     private ArrayList<ToDoItem> todoItems;
     
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class ToDoList extends Activity
         
         // create the Array Adapter to bind the array to the List View       
         int resID = R.layout.todolist_item;        
-        aa = new ArrayAdapter<ToDoItem>(this, resID, todoItems);
+        aa = new ToDoItemAdapter(this, resID, todoItems);
         
         // bind the array adapter to the list view
         todoListFragment.setListAdapter(aa);
